@@ -3,8 +3,9 @@ import { BaseComponent } from "../../base.js";
 export class TodoComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, todo: string) {
     super(`<section class="todo">
-        <h1 class="todo__title"></h1>
+        <h1 class="page-item__title todo__title"></h1>
         <input type="checkbox" class="todo-checkbox">
+        <label for="todo-checkbox" class="todo-label"></label>
     </section>`);
 
     const titleElement = this.element.querySelector(
@@ -13,8 +14,8 @@ export class TodoComponent extends BaseComponent<HTMLElement> {
     titleElement.textContent = title;
 
     const bodyElement = this.element.querySelector(
-      ".todo-checkbox"
+      ".todo-label"
     )! as HTMLInputElement;
-    bodyElement.insertAdjacentText("afterend", todo);
+    bodyElement.textContent = todo;
   }
 }

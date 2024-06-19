@@ -3,7 +3,7 @@ import { BaseComponent } from "../../base.js";
 export class VideoComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, url: string) {
     super(`<section class="video">
-            <h1 class="video__title"></h1>
+            <h1 class="page-item__title video__title"></h1>
             <div class="video__holder">
                 <iframe width="420" height="345" class="video__iframe" />
             </div>
